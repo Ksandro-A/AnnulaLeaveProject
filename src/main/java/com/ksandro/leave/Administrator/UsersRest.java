@@ -46,13 +46,13 @@ public class UsersRest {
 	@RequestMapping("loadUsers")
 	@POST
 	public ResponseEntity<?> loadUsers() throws Exception {
-		log.info("RestMethod loadList() -> START.");
+		log.info("RestMethod loadUsers() -> START.");
 		List<Users> usersList = usersManager.loadUsers();
 		if (usersList == null) {
 			throw new Exception("Error while loading users list");
 		}
 		
-		log.info("RestMethod loadList() -> FINE.");
+		log.info("RestMethod loadUsers() -> FINE.");
 		return ResponseEntity.ok(usersList);
 	}
 	
@@ -60,13 +60,13 @@ public class UsersRest {
 	@POST
 	@ResponseBody
 	public ResponseEntity<?> createUser(@RequestBody Users user) throws Exception {
-		log.info("RestMethod loadList() -> START.");
+		log.info("RestMethod createUser() -> START.");
 		Users users = usersManager.createUser(user);
 		if (users == null) {
 			throw new Exception("Error while creating user");
 		}
 		
-		log.info("RestMethod loadList() -> FINE.");
+		log.info("RestMethod createUser() -> END.");
 		return ResponseEntity.ok(users);
 	}
 

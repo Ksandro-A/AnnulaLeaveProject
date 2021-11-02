@@ -31,10 +31,10 @@ final static Logger log = Logger.getLogger(ApplicationManager.class.getName());
 	
 	// Method to load all applications
 	public List<Application> loadApplications() {
-		log.info("Method getAllUsers -> START");
+		log.info("Method loadApplications -> START");
 		String query = "select app from Application app where app.deleteDate is NULL";
 		List<Application>  application = entityManager.createQuery(query).getResultList();
-		log.info("Method getAllUsers -> End");
+		log.info("Method loadApplications -> End");
 		return application;
 	}
 	

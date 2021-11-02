@@ -31,13 +31,13 @@ public class ApplicationRest {
 	@POST
 	public ResponseEntity<?> loadApplicationsList() throws Exception {
 		// user id to be taken from session user
-		log.info("RestMethod loadList() -> Start.");
+		log.info("RestMethod loadApplicationsList() -> Start.");
 		List<Application> appList = applicationManager.loadApplications();
 		if (appList == null) {
 			throw new Exception("Error while loading users list");
 		}
 		
-		log.info("RestMethod loadList() -> END.");
+		log.info("RestMethod loadApplicationsList() -> END.");
 		return ResponseEntity.ok(appList);
 	}
 	
@@ -65,14 +65,14 @@ public class ApplicationRest {
 	public ResponseEntity<?> saveApplicationChangeStatus(@RequestBody Application application) throws Exception {
 		log.info("RestMethod saveApplicationChangeStatus() -> Start.");
 		log.info("applicationid " + application.getId());
-		log.info("applicationS " + application.getAppStatus());
+		log.info("applicationStatus " + application.getAppStatus());
 		
 		application = applicationManager.changeStateApplication(application);
 		if (application == null) {
 			throw new Exception("Error while saving application.");
 		}
 		
-		log.info("RestMethod savePropostaCambioStato() -> FINE.");
+		log.info("RestMethod saveApplicationChangeStatus() -> END.");
 		return ResponseEntity.ok(application);
 	}
 }

@@ -104,7 +104,7 @@ public class ApplicationRestUser {
 	@POST
 	@RequestMapping("listaAppFilter")
 	public ResponseEntity<?> listaAppFilter(@FormParam("username") String username, @FormParam("days") String days) throws Exception {
-		log.info("Rest method listaAccessiSettings START");
+		log.info("Rest method listaAppFilter START");
 		log.info("Username: " + username);
 		log.info("days: " + days);
 		List<Application> result = applicationManager.getApplicationList(username, days);

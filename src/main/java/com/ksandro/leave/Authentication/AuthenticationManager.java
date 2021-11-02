@@ -156,10 +156,10 @@ public class AuthenticationManager {
 	}
 	
 	private int getRandomNumber() {
-		log.info("Method getRandomNumber() -> INIZIO.");
+		log.info("Method getRandomNumber() -> START.");
 		Random rnd = new Random();
 		int number = rnd.nextInt(90000) + 10000;
-		log.info("Method getRandomNumber() -> Fine.");
+		log.info("Method getRandomNumber() -> END.");
 		return number;
 	}
 	

@@ -27,11 +27,11 @@ public class UsersManager {
 	
 	
 	public List<Users> loadUsers() {
-		log.info("Method getAllUsers -> START");
+		log.info("Method loadUsers -> START");
 		String query = "select u from Users u";
 		List<Users>  users = entityManager.createQuery(query).getResultList();
 	
-		log.info("Method getAllUsers -> End");
+		log.info("Method loadUsers -> End");
 		return users;
 	}
 	
