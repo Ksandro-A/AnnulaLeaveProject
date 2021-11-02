@@ -108,8 +108,8 @@ public class AuthenticationManager {
 		try {
 		mailManager.sendSimpleMessage(user.getEmail(), userid, bodyText);
 		}catch (Exception e) {
-			//log.severe("Error sending change password confirmation e-mail");
-			throw new Exception("MAIL");
+			log.severe("Error sending change password confirmation e-mail");
+			//throw new Exception("MAIL");
 		}
 		log.info("Method changePassword -> END");
 		return user;
